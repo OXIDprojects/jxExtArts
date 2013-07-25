@@ -18,7 +18,7 @@ $aModule = array(
     'thumbnail'    => 'jxextarts.png',
     'version'      => '0.1',
     'author'       => 'Joachim Barthel',
-    'url'          => 'https://github.com/job963/jxNNNEdit',
+    'url'          => 'https://github.com/job963/jxExtArts',
     'email'        => 'jobarthel@gmail.com',
     'extend'       => array(
                         ),

@@ -8,11 +8,16 @@
 
     [{assign var="listclass" value=listitem$blWhite }]
     [{assign var="hasvariants" value=true }]
+    [{assign var="oConfig" value=$oViewConf->getConfig()}]
+
     <td class="[{ $listclass}]"><a href="Javascript:editThis('[{ $listitem->oxarticles__oxid->value}]');" class="[{ $listclass}]" [{include file="help.tpl" helpid=editvariant}]><img src="[{$oViewConf->getImageUrl()}]/editvariant.gif" width="15" height="15" alt="" border="0" align="absmiddle"></a></td>
     <td class="[{ $listclass}]" align="center"><input class="edittext" type="checkbox" name="editval[[{ $listitem->oxarticles__oxid->value}]][oxarticles__oxactive]" value='1' [{if $listitem->oxarticles__oxactive->value == 1}]checked[{/if}] [{ $readonly }]></td>
     <td class="[{ $listclass}]"><input type="text" class="editinput" size="25" maxlength="[{$listitem->oxarticles__oxvarselect->fldmax_length}]" name="editval[[{ $listitem->oxarticles__oxid->value}]][oxarticles__oxvarselect]" value="[{$listitem->oxarticles__oxvarselect->value}]" [{ $readonly }]></td>
     <td class="[{ $listclass}]"><input type="text" class="editinput" size="20" maxlength="[{$listitem->oxarticles__oxartnum->fldmax_length}]" name="editval[[{ $listitem->oxarticles__oxid->value}]][oxarticles__oxartnum]" value="[{$listitem->oxarticles__oxartnum->value}]" [{ $readonly }]></td>
-    <td class="[{ $listclass}]"><input type="text" class="editinput" size="16" maxlength="[{$listitem->oxarticles__oxean->fldmax_length}]" name="editval[[{ $listitem->oxarticles__oxid->value}]][oxarticles__oxean]" value="[{$listitem->oxarticles__oxean->value}]" onchange="checkGTIN(this);" [{ $readonly }]></td>
+    <td class="[{ $listclass}]">
+        <input type="text" class="editinput" size="16" maxlength="[{$listitem->oxarticles__oxean->fldmax_length}]" id="editval[[{ $listitem->oxarticles__oxid->value}]][oxarticles__oxean]" name="editval[[{ $listitem->oxarticles__oxid->value}]][oxarticles__oxean]" value="[{$listitem->oxarticles__oxean->value}]" onchange="checkGTIN(this);" [{ $readonly }]>
+        [{ if $oConfig->getConfigParam("sJxExtArtEdCheckEAN") }]<script type="text/javascript">checkGTIN(document.getElementById('editval[[{ $listitem->oxarticles__oxid->value}]][oxarticles__oxean]'),'onLoad');</script>[{/if}]
+    </td>
     <td class="[{ $listclass}]"><input type="text" class="editinput" size="7" maxlength="[{$listitem->oxarticles__oxbprice->fldmax_length}]" name="editval[[{ $listitem->oxarticles__oxid->value}]][oxarticles__oxbprice]" value="[{$listitem->oxarticles__oxbprice->value}]" [{ $readonly }]></td>
     <td class="[{ $listclass}]"><input type="text" class="editinput" size="7" maxlength="[{$listitem->oxarticles__oxprice->fldmax_length}]" name="editval[[{ $listitem->oxarticles__oxid->value}]][oxarticles__oxprice]" value="[{$listitem->oxarticles__oxprice->value}]" [{ $readonly }]></td>
     <td class="[{ $listclass}]"><input type="text" class="editinput" size="7" maxlength="[{$listitem->oxarticles__oxtprice->fldmax_length}]" name="editval[[{ $listitem->oxarticles__oxid->value}]][oxarticles__oxtprice]" value="[{$listitem->oxarticles__oxtprice->value}]" [{ $readonly }]></td>

@@ -55,7 +55,7 @@
 
           [{if $blPicUplodaded && !$readonly }]
                [{assign var="sPicUrl" value=$edit->getPictureUrl($iIndex)}]
-               <a href="[{$sPicUrl}]" class="zoomText" target="_blank"><span class="ico"></span><span class="float: left;>">[{ oxmultilang ident="ARTICLE_PICTURES_PREVIEW" }]</span></a>
+               <a href="[{$sPicUrl}]" class="zoomText" target="_blank"><span class="ico"></span><span class="float: left;>">[{ oxmultilang ident="JXEXTARTED_PICTURES_OPENPREVIEW" }]</span></a>
                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                <a class="thumbnail" href="#thumb">
                    [{ oxmultilang ident="ARTICLE_PICTURES_PREVIEW" }]<span><img src="[{$sPicUrl}]" /></span>

@@ -25,7 +25,7 @@
         [{ oxmultilang ident="ARTICLE_STOCK_STOCKFLAG" }]
       </td>
       <td class="edittext">
-        <select name="editval[oxarticles__oxstockflag]" class="editinput" [{ $readonly }]>
+        <select id="editval[oxarticles__oxstockflag]" name="editval[oxarticles__oxstockflag]" class="editinput"  onchange="jxSwitchStockFlag(this)" [{ $readonly }]>
           <option value="1" [{ if $edit->oxarticles__oxstockflag->value == 1 }]SELECTED[{/if}]>[{ oxmultilang ident="GENERAL_STANDARD" }]</option>
           <option value="4" [{ if $edit->oxarticles__oxstockflag->value == 4 }]SELECTED[{/if}]>[{ oxmultilang ident="GENERAL_EXTERNALSTOCK" }]</option>
           <option value="2" [{ if $edit->oxarticles__oxstockflag->value == 2 }]SELECTED[{/if}]>[{ oxmultilang ident="GENERAL_OFFLINE" }]</option>
@@ -39,7 +39,7 @@
       [{ oxmultilang ident="ARTICLE_STOCK_DELIVERY" }]
       </td>
       <td class="edittext">
-        <input type="text" class="editinput" size="20" maxlength="[{$edit->oxarticles__oxdelivery->fldmax_length}]" id="editval[oxarticles__oxdelivery]"  name="editval[oxarticles__oxdelivery]" value="[{$edit->oxarticles__oxdelivery|oxformdate}]" [{include file="help.tpl" helpid=article_delivery}] [{ if $oConfig->getConfigParam("sJxExtArtEdCheckDate") }]onchange="jxCheckDate(this)"[{ /if}] [{ $readonly }]>
+        <input type="text" class="editinput" size="20" maxlength="[{$edit->oxarticles__oxdelivery->fldmax_length}]" id="editval[oxarticles__oxdelivery]"  name="editval[oxarticles__oxdelivery]" value="[{$edit->oxarticles__oxdelivery|oxformdate}]" [{include file="help.tpl" helpid=article_delivery}] [{ if $edit->oxarticles__oxstockflag->value == 4 }]DISABLED[{/if}] [{ if $oConfig->getConfigParam("sJxExtArtEdCheckDate") }]onchange="jxCheckDate(this)"[{ /if}] [{ $readonly }]>
         [{ oxinputhelp ident="HELP_ARTICLE_STOCK_DELIVERY" }]
         [{ if $oConfig->getConfigParam("sJxExtArtEdCheckDate") }]
             <script type="text/javascript">jxCheckDate(document.getElementById('editval[oxarticles__oxdelivery]'),'onLoad');</script>
@@ -70,9 +70,9 @@
         [{ oxmultilang ident="ARTICLE_STOCK_REMINDACTIV" }]
       </td>
       <td class="edittext">
-        <input type="checkbox" class="editinput" name="editval[oxarticles__oxremindactive]" value='[{if $edit->oxarticles__oxremindactive->value }][{ $edit->oxarticles__oxremindactive->value }][{else}]1[{/if}]' [{if $edit->oxarticles__oxremindactive->value }]checked[{/if}] [{ $readonly }] onclick="jxSwitchRemindValue(this);"[{if $oxparentid }]readonly disabled[{/if}]>
+        <input type="checkbox" class="editinput" id="editval[oxarticles__oxremindactive]" name="editval[oxarticles__oxremindactive]" value='[{if $edit->oxarticles__oxremindactive->value }][{ $edit->oxarticles__oxremindactive->value }][{else}]1[{/if}]' [{if $edit->oxarticles__oxremindactive->value }]checked[{/if}] [{ if $edit->oxarticles__oxstockflag->value == 4 }]DISABLED[{/if}] [{ $readonly }] onclick="jxSwitchRemindValue(this);"[{if $oxparentid }]readonly disabled[{/if}]>
         [{ oxinputhelp ident="HELP_ARTICLE_STOCK_REMINDACTIV" }]
-        <input type="text" class="editinput" size="20" maxlength="[{$edit->oxarticles__oxremindamount->fldmax_length}]" id="editval[oxarticles__oxremindamount]" name="editval[oxarticles__oxremindamount]" value="[{$edit->oxarticles__oxremindamount->value}]" [{if $edit->oxarticles__oxremindactive->value != 1}]disabled[{/if}][{ $readonly }]>
+        <input type="text" class="editinput" size="20" maxlength="[{$edit->oxarticles__oxremindamount->fldmax_length}]" id="editval[oxarticles__oxremindamount]" name="editval[oxarticles__oxremindamount]" value="[{$edit->oxarticles__oxremindamount->value}]" [{if $edit->oxarticles__oxremindactive->value != 1 || $edit->oxarticles__oxstockflag->value == 4 }]disabled[{/if}][{ $readonly }]> 
         [{ oxinputhelp ident="HELP_ARTICLE_STOCK_REMINDAMAOUNT" }]
       </td>
     </tr>
@@ -108,7 +108,7 @@
               [{ oxmultilang ident="ARTICLE_STOCK_NOSTOCKTEXT" }]
             </td>
             <td class="edittext">
-              <input type="text" class="editinput" size="40" maxlength="[{$edit->oxarticles__oxnostocktext->fldmax_length}]" name="editval[oxarticles__oxnostocktext]" value="[{$edit->oxarticles__oxnostocktext->value}]" [{ $readonly }]>
+              <input type="text" class="editinput" size="40" maxlength="[{$edit->oxarticles__oxnostocktext->fldmax_length}]" id="editval[oxarticles__oxnostocktext]" name="editval[oxarticles__oxnostocktext]" value="[{$edit->oxarticles__oxnostocktext->value}]" [{ if $edit->oxarticles__oxstockflag->value == 4 }]DISABLED[{/if}] [{ $readonly }]>
               [{ oxinputhelp ident="HELP_ARTICLE_STOCK_NOSTOCKTEXT" }]
             </td>
           </tr>

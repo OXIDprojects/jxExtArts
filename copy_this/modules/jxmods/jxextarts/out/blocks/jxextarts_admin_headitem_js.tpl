@@ -84,10 +84,29 @@
             document.getElementById('editval[oxarticles__oxremindamount]').disabled=false;
         }
     }
-
-
-    function jxCheckDate( formElement )
+    
+    
+    function jxSwitchStockFlag( formElement )
     {
+        //alert(formElement.value);
+        if (formElement.value == 4) {
+            document.getElementById('editval[oxarticles__oxdelivery]').disabled=true;
+            document.getElementById('editval[oxarticles__oxremindactive]').disabled=true;
+            document.getElementById('editval[oxarticles__oxremindamount]').disabled=true;
+            document.getElementById('editval[oxarticles__oxnostocktext]').disabled=true;
+        } else {
+            document.getElementById('editval[oxarticles__oxdelivery]').disabled=false;
+            document.getElementById('editval[oxarticles__oxremindactive]').disabled=false;
+            document.getElementById('editval[oxarticles__oxremindamount]').disabled=false;
+            document.getElementById('editval[oxarticles__oxnostocktext]').disabled=false;
+        }
+    }
+
+
+    function jxCheckDate( formElement, dispMode )
+    {
+        if (typeof(dispMode) == "undefined")
+            dispMode = "onChange";
         var sDate = formElement.value;
         if ( sDate == "0000-00-00" )
             return;
@@ -100,17 +119,24 @@
 
         dDate = new Date(year, month, day);
 
-        if ( (year == dDate.getFullYear()) && (month == dDate.getMonth()) && (day == dDate.getDate()) )
-            formElement.style.color = "#00bb00";
-        else
+        if ( (year == dDate.getFullYear()) && (month == dDate.getMonth()) && (day == dDate.getDate()) ) {
+            if ( dispMode == "onChange" )
+                formElement.style.color = "#00bb00";
+            else
+                formElement.style.color = "#000000";
+        }
+        else {
             formElement.style.color = "#ff0000";
+        }
 
         return;
     }
 
 
-    function jxCheckDateTime( formElement )
+    function jxCheckDateTime( formElement, dispMode )
     {
+        if (typeof(dispMode) == "undefined")
+            dispMode = "onChange";
         var sDateTime = formElement.value;
         if ( sDateTime == "0000-00-00 00:00:00" )
             return;
@@ -128,10 +154,15 @@
 
         dDate = new Date(year, month, day);
 
-        if ( (year == dDate.getFullYear()) && (month == dDate.getMonth()) && (day == dDate.getDate()) && (hour>=0 && hour <=23) && (minute>=0 && minute<=59) && (second>=0 && second<=59) )
-            formElement.style.color = "#00bb00";
-        else
+        if ( (year == dDate.getFullYear()) && (month == dDate.getMonth()) && (day == dDate.getDate()) && (hour>=0 && hour <=23) && (minute>=0 && minute<=59) && (second>=0 && second<=59) ) {
+            if ( dispMode == "onChange" )
+                formElement.style.color = "#00bb00";
+            else
+                formElement.style.color = "#000000";
+            }
+        else {
             formElement.style.color = "#ff0000";
+        }
 
         return;
     }

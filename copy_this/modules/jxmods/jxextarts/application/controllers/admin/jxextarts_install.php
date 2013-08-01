@@ -25,67 +25,13 @@ class jxExtArts_Install
 { 
     public static function onActivate() 
     { 
-        //echo 'onActivate';
-        return true;
-        $this->_insertTplBlock('headitem.tpl',         'admin_headitem_js',                '/out/blocks/jxextarts_admin_headitem_js.tpl');
-        $this->_insertTplBlock('article_pictures.tpl', 'admin_article_pictures_main',      '/out/blocks/admin_article_pictures_main.tpl');
-        $this->_insertTplBlock('article_variant.tpl',  'admin_article_variant_newitem',    '/out/blocks/admin_article_variant_newitem.tpl');
-        $this->_insertTplBlock('article_variant.tpl',  'admin_article_variant_listitem',   '/out/blocks/admin_article_variant_listitem.tpl');
-        $this->_insertTplBlock('article_variant.tpl',  'admin_article_variant_parent',     '/out/blocks/admin_article_variant_parent.tpl');
-        $this->_insertTplBlock('article_variant.tpl',  'admin_article_variant_listheader', '/out/blocks/admin_article_variant_listheader.tpl');
-        $this->_insertTplBlock('article_stock.tpl',    'admin_article_stock_form',         '/out/blocks/admin_article_stock_form.tpl');
-        $this->_insertTplBlock('article_main.tpl',     'admin_article_main_editor',        '/out/blocks/admin_article_main_editor.tpl');
-        $this->_insertTplBlock('article_main.tpl',     'admin_article_main_form',          '/out/blocks/admin_article_main_form.tpl');
-
         return true;
     }
 
     
     public static function onDeactivate() 
     { 
-        //echo 'onDeactivate';
         return true;
-
-        $sShopId = jxExtArts_Install::_strShopId();
-        $oDb = oxDb::getDb(); 
-
-        $sSql = "DELETE FROM oxtplblocks WHERE oxmodule = 'jxextarts' AND oxshopid=$sShopId "; 
-        $oRs = $oDb->execute($sSql); 
-
-        return true;
-    }
-    
-    
-    private function _insertTplBlock( $sTemplate, $sBlockname, $sFile )
-    {
-        $oDb = oxDb::getDb(); 
-        $sModule = 'jxextarts';
-        $sShopId = $this->_strShopId();
-        //echo 'vor getId()';
-        //$sId = $this->getId();
-        $sId = $sBlockname;
-        
-        $aSql[0] = "INSERT INTO oxtplblocks "
-                 . "(oxid, oxactive, oxshopid, oxtemplate, oxblockname, oxpos, oxfile, oxmodule) "
-                 . "VALUES"
-                 ."('$sId', 1, $sShopId, '$sTemplate', '$sBlockname', 1, '$sFile', '$sModule') "; 
-        
-        $oRs = $oDb->execute($sSql); 
-    }
-    
-    
-    public function _strShopId()
-    {
-        /*echo 'strShopId';
-        if ( is_string($this->getConfig()->getActiveShopId()) ) 
-            $sShopId = "'" . $this->getConfig()->getActiveShopId() . "'";   // This is a CE or PE Shop
-        else
-            $sShopId = strval($this->getConfig()->getActiveShopId());       // This is a EE Shop
-         * 
-         */
-        $sShopId = "'oxbaseshop'";
-        
-        return $sShopId;
     }
     
 }    

@@ -13,7 +13,7 @@
     
 [{assign var="oConfig" value=$oViewConf->getConfig()}]
 
-[{ if $oConfig->getConfigParam("sJxExtArtEdShowArticleMain") }]
+[{ if $oConfig->getConfigParam("sJxExtArtsShowArticleMain") }]
     <span style="width:15%;display:inline-block;margin-left:1px;">
         [{ oxmultilang ident="ARTICLE_MAIN_SHORTDESC" }]
     </span>

@@ -11,6 +11,9 @@
   *
   *  ------------------------------------------ *}]
 
+[{assign var="oConfig" value=$oViewConf->getConfig()}]
+
+[{ if $oConfig->getConfigParam("sJxExtArtsShowArticleVariant") }]
     [{assign var="listclass" value=listitem$blWhite }]
     [{assign var="hasvariants" value=true }]
     [{assign var="oConfig" value=$oViewConf->getConfig()}]
@@ -39,3 +42,6 @@
     <td class="[{ $listclass}]">
         <a href="Javascript:deleteThis('[{ $listitem->oxarticles__oxid->value }]');" class="delete"[{include file="help.tpl" helpid=item_delete}]></a>
     </td>
+[{ else}]
+    [{$smarty.block.parent}]
+[{ /if}]

@@ -13,7 +13,7 @@
     
 [{assign var="oConfig" value=$oViewConf->getConfig()}]
 
-[{ if $oConfig->getConfigParam("sJxExtArtEdShowArticlePictures") }]
+[{ if $oConfig->getConfigParam("sJxExtArtsShowArticlePictures") }]
     <colgroup>
         <col width="2%">
         <col width="1%" nowrap>
@@ -61,14 +61,14 @@
       </td>
       <td nowrap="nowrap">
           [{if $blPicUplodaded && !$readonly }]
-          <a href="Javascript:if (confirm('[{ oxmultilang ident="JXEXTARTED_PICTURES_DELETECONFIRM" }]')==true) DeletePic('[{$iIndex}];');" class="deleteText"><span class="ico"></span><span class="float: left;>">[{ oxmultilang ident="GENERAL_DELETE" }]</span></a>
+          <a href="Javascript:if (confirm('[{ oxmultilang ident="JXEXTARTS_PICTURES_DELETECONFIRM" }]')==true) DeletePic('[{$iIndex}];');" class="deleteText"><span class="ico"></span><span class="float: left;>">[{ oxmultilang ident="GENERAL_DELETE" }]</span></a>
           [{/if}]
       </td>
       <td>
 
           [{if $blPicUplodaded && !$readonly }]
                [{assign var="sPicUrl" value=$edit->getPictureUrl($iIndex)}]
-               <a href="[{$sPicUrl}]" class="zoomText" target="_blank"><span class="ico"></span><span class="float: left;>">[{ oxmultilang ident="JXEXTARTED_PICTURES_OPENPREVIEW" }]</span></a>
+               <a href="[{$sPicUrl}]" class="zoomText" target="_blank"><span class="ico"></span><span class="float: left;>">[{ oxmultilang ident="JXEXTARTS_PICTURES_OPENPREVIEW" }]</span></a>
                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                <a class="thumbnail" href="#thumb">
                    [{ oxmultilang ident="ARTICLE_PICTURES_PREVIEW" }]<span><img src="[{$sPicUrl}]" /></span>

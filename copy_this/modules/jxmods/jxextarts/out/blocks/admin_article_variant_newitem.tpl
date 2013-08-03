@@ -11,6 +11,9 @@
   *
   *  ------------------------------------------ *}]
 
+[{assign var="oConfig" value=$oViewConf->getConfig()}]
+
+[{ if $oConfig->getConfigParam("sJxExtArtsShowArticleVariant") }]
     <td class="[{ $listclass}]" colspan="2">&nbsp;</td>
     <td class="[{ $listclass}]"><input type="text" class="editinput" size="25" maxlength="[{$listitem->oxarticles__oxvarselect->fldmax_length}]" name="editval[oxarticles__oxvarselect]" value="" [{ $readonly }]></td>
     <td class="[{ $listclass}]"><input type="text" class="editinput" size="20" maxlength="[{$listitem->oxarticles__oxartnum->fldmax_length}]" name="editval[oxarticles__oxartnum]" value="" [{ $readonly }]></td>
@@ -28,3 +31,6 @@
         <option value="3">[{ oxmultilang ident="GENERAL_NONORDER" }]</option>
         </select>
     </td>
+[{ else}]
+    [{$smarty.block.parent}]
+[{ /if}]

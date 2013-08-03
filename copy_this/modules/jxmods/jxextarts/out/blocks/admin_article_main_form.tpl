@@ -13,7 +13,7 @@
     
 [{assign var="oConfig" value=$oViewConf->getConfig()}]
 
-[{ if $oConfig->getConfigParam("sJxExtArtEdShowArticleMain") }]
+[{ if $oConfig->getConfigParam("sJxExtArtsShowArticleMain") }]
     [{ if $errorsavingatricle }]
     <tr>
       <td colspan="2">

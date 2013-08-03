@@ -13,7 +13,7 @@
     
 [{assign var="oConfig" value=$oViewConf->getConfig()}]
 
-[{ if $oConfig->getConfigParam("sJxExtArtEdShowArticleStock") }]
+[{ if $oConfig->getConfigParam("sJxExtArtsShowArticleStock") }]
     [{ if $oxparentid }]
     <tr>
       <td class="edittext" width="160">

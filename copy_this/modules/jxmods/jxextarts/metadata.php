@@ -80,38 +80,38 @@ $aModule = array(
                         ),
     'settings' => array(
                     array(
-                            'group' => 'JXEXTARTED_BLOCKS', 
-                            'name'  => 'sJxExtArtEdShowArticleMain', 
+                            'group' => 'JXEXTARTS_BLOCKS', 
+                            'name'  => 'sJxExtArtsShowArticleMain', 
                             'type'  => 'bool', 
                             'value' => 'true'
                             ),
                     array(
-                            'group' => 'JXEXTARTED_BLOCKS', 
-                            'name'  => 'sJxExtArtEdShowArticleStock', 
+                            'group' => 'JXEXTARTS_BLOCKS', 
+                            'name'  => 'sJxExtArtsShowArticleStock', 
                             'type'  => 'bool', 
                             'value' => 'true'
                             ),
                     array(
-                            'group' => 'JXEXTARTED_BLOCKS', 
-                            'name'  => 'sJxExtArtEdShowArticleVariant', 
+                            'group' => 'JXEXTARTS_BLOCKS', 
+                            'name'  => 'sJxExtArtsShowArticleVariant', 
                             'type'  => 'bool', 
                             'value' => 'true'
                             ),
                     array(
-                            'group' => 'JXEXTARTED_BLOCKS', 
-                            'name'  => 'sJxExtArtEdShowArticlePictures', 
+                            'group' => 'JXEXTARTS_BLOCKS', 
+                            'name'  => 'sJxExtArtsShowArticlePictures', 
                             'type'  => 'bool', 
                             'value' => 'true'
                             ),
                     array(
-                            'group' => 'JXEXTARTED_FUNCTIONS', 
-                            'name'  => 'sJxExtArtEdCheckEAN', 
+                            'group' => 'JXEXTARTS_FUNCTIONS', 
+                            'name'  => 'sJxExtArtsCheckEAN', 
                             'type'  => 'bool', 
                             'value' => 'true'
                             ),
                     array(
-                            'group' => 'JXEXTARTED_FUNCTIONS', 
-                            'name'  => 'sJxExtArtEdCheckDate', 
+                            'group' => 'JXEXTARTS_FUNCTIONS', 
+                            'name'  => 'sJxExtArtsCheckDate', 
                             'type'  => 'bool', 
                             'value' => 'true'
                             )

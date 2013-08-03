@@ -11,6 +11,9 @@
   *
   *  ------------------------------------------ *}]
     
+[{assign var="oConfig" value=$oViewConf->getConfig()}]
+
+[{ if $oConfig->getConfigParam("sJxExtArtsShowArticleVariant") }]
     <td class="listheader first" height="15">[{ oxmultilang ident="ARTICLE_VARIANT_EDIT" }] </td>
     <td class="listheader">[{ oxmultilang ident="ARTICLE_VARIANT_ACTIVE" }] </td>
     <td class="listheader">[{ oxmultilang ident="ARTICLE_VARIANT_CHOICE" }] </td>
@@ -22,3 +25,6 @@
     <td class="listheader">[{ oxmultilang ident="ARTICLE_VARIANT_SORT" }]</td>
     <td class="listheader">[{ oxmultilang ident="ARTICLE_VARIANT_STOCK" }]</td>
     <td class="listheader" colspan="2">[{ oxmultilang ident="ARTICLE_STOCK_STOCKFLAG" }]</td>
+[{ else}]
+    [{$smarty.block.parent}]
+[{ /if}]

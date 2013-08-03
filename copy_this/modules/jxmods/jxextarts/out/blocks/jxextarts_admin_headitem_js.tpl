@@ -17,7 +17,7 @@
         }
         if ( gtin.match("[^0-9]") ) {
             formElement.style.color = "#ff0000";
-            formElement.title = "[{ oxmultilang ident="JXVAREDIT_ERROR_WRONGCHARS" }]";
+            formElement.title = "[{ oxmultilang ident="JXEXTARTS_ERROR_WRONGCHARS" }]";
             return false;
         }
 
@@ -47,7 +47,7 @@
         if ( calcSum != checkSum ) {
             //alert('wrong code');
             formElement.style.color = "#ff0000";
-            formElement.title = "[{ oxmultilang ident="JXVAREDIT_ERROR_WRONGCHECKSUM" }]";
+            formElement.title = "[{ oxmultilang ident="JXEXTARTS_ERROR_WRONGCHECKSUM" }]";
             return false;
         } else {
             //alert('correct');

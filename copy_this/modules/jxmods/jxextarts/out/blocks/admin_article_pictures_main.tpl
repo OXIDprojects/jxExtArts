@@ -1,3 +1,16 @@
+
+[{*  ------------------------------------------
+  *  Replacement of block 
+  *      admin_article_pictures_main
+  *  in file 
+  *      article_pictures.tpl 
+  *
+  * @link      https://github.com/job963/jxExtArts
+  * @license   http://www.gnu.org/licenses/gpl-3.0.html GPL v3 or later
+  * @copyright (C) Joachim Barthel 2012-2013
+  *
+  *  ------------------------------------------ *}]
+    
 [{assign var="oConfig" value=$oViewConf->getConfig()}]
 
 [{ if $oConfig->getConfigParam("sJxExtArtEdShowArticlePictures") }]

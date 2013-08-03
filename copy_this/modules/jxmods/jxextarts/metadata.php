@@ -69,6 +69,11 @@ $aModule = array(
                         'file'     => '/out/blocks/admin_article_pictures_main.tpl'
                             ),
                     array(
+                        'template' => 'article_pictures.tpl', 
+                        'block'    => 'admin_article_pictures_custom',                     
+                        'file'     => '/out/blocks/admin_article_pictures_custom.tpl'
+                            ),
+                    array(
                         'template' => 'headitem.tpl', 
                         'block'    => 'admin_headitem_js',                     
                         'file'     => '/out/blocks/jxextarts_admin_headitem_js.tpl'

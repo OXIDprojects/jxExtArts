@@ -8,17 +8,17 @@ $aLang = array(
     'JXEXTARTS_PICTURES_OPENPREVIEW'                       => 'Opwen',
     'JXEXTARTS_PICTURES_DELETECONFIRM'                     => 'Do you really want to delete this picture?',
 
-    'JXEXTARTS_ERROR_WRONGCHARS'                           => 'EAN/GTIN Code enthält falsche Zeichen',
-    'JXEXTARTS_ERROR_WRONGCHECKSUM'                        => 'Fehlerhafter GTIN Code (Prüfsumme)',
+    'JXEXTARTS_ERROR_WRONGCHARS'                           => 'EAN/GTIN code contains wrong characters',
+    'JXEXTARTS_ERROR_WRONGCHECKSUM'                        => 'Incorrect GTIN code (checksum)',
     
-    'SHOP_MODULE_GROUP_JXEXTARTS_BLOCKS'                   => 'Folgende Tab-Reiter ersetzen',
-    'SHOP_MODULE_sJxExtArtsShowArticleMain'                => 'Artikel-Stamm',
-    'SHOP_MODULE_sJxExtArtsShowArticleStock'               => 'Lager',
-    'SHOP_MODULE_sJxExtArtsShowArticleVariant'             => 'Varianten',
-    'SHOP_MODULE_sJxExtArtsShowArticlePictures'            => 'Bilder',
-    'SHOP_MODULE_GROUP_JXEXTARTS_FUNCTIONS'                 => 'Folgende Funktionen aktivieren',
-    'SHOP_MODULE_sJxExtArtsCheckEAN'                       => 'EAN/GTIN Code prüfen',
-    'SHOP_MODULE_sJxExtArtsCheckDate'                      => 'Datum prüfen',
+    'SHOP_MODULE_GROUP_JXEXTARTS_BLOCKS'                   => 'Replace the following tabs',
+    'SHOP_MODULE_sJxExtArtsShowArticleMain'                => 'Products Main',
+    'SHOP_MODULE_sJxExtArtsShowArticleStock'               => 'Stock',
+    'SHOP_MODULE_sJxExtArtsShowArticleVariant'             => 'Variants',
+    'SHOP_MODULE_sJxExtArtsShowArticlePictures'            => 'Pictures',
+    'SHOP_MODULE_GROUP_JXEXTARTS_FUNCTIONS'                => 'Activate the following functions',
+    'SHOP_MODULE_sJxExtArtsCheckEAN'                       => 'Check EAN/GTIN code',
+    'SHOP_MODULE_sJxExtArtsCheckDate'                      => 'Check date',
         
     'charset'                                               => 'ISO-8859-15',
 );
